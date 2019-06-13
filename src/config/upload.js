@@ -7,5 +7,9 @@ module.exports = {
         filename: function(req, file, callBack){
             callBack(null, file.originalname);
         }
+    }),
+    storageResized: new multer.diskStorage({
+        destination: path.resolve(__dirname, '..', '..', 'uploads', 'resized')
     })
+
 }
